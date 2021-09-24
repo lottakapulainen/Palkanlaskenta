@@ -22,8 +22,16 @@ namespace SovellusEsim1
 
                         Console.WriteLine("Anna palkkatiedot");
                         var palkkatiedot = Console.ReadLine();
-                        
-                        var työntekijä = new Työntekijä(palkkatiedot,nimi);                        
+
+                        Console.WriteLine("Anna ennakonpidätysprosentti");
+                        var Ennakonpidätys = Console.ReadLine();
+
+                        Console.WriteLine("Anna palkanmaksupäivä");
+                        var Palkanmaksupäivä = Console.ReadLine();
+
+
+
+                        var työntekijä = new Työntekijä(palkkatiedot,nimi,Ennakonpidätys,Palkanmaksupäivä);                        
 
                         app.LisääTyöntekijä(työntekijä);
                         break;

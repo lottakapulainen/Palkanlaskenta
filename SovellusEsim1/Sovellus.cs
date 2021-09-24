@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SovellusEsim1
 {
     //dataluokat
-    record Työntekijä(string PalkkaTieto, string Nimi);
+    record Työntekijä(string PalkkaTieto, string Nimi, string Ennakonpidätys, string Palkanmaksupäivä);
     record Palkkatieto(string Palkkatietoja, Työntekijä Omistaja);
 
     // hallintaluokka
@@ -31,7 +31,7 @@ namespace SovellusEsim1
             string retval = "";
             foreach (var item in Työntekijät)
             {
-                retval += $"{item.PalkkaTieto} {item.Nimi}\n";
+                retval += $"{item.PalkkaTieto} {item.Nimi} {item.Ennakonpidätys} {item.Palkanmaksupäivä}\n";
             }
             return retval;
         }

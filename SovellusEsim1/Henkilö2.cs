@@ -10,16 +10,23 @@ namespace SovellusEsim1
     {
         public string PalkkaTieto { get; init; }
         public string Nimi { get; init; }
+        public string Ennakonpidätys { get; init; }
+        public string Palkanmaksupäivä { get; init; }
 
-        public Henkilö2(string palkkaTieto, string nimi)
+
+
+        public Henkilö2(string palkkaTieto, string nimi, string palkanmaksupäivä, string ennakonpidätys)
         {
             PalkkaTieto = palkkaTieto;
             Nimi = nimi;
+            Palkanmaksupäivä = palkanmaksupäivä;
+            Ennakonpidätys = ennakonpidätys;
+
         }
 
         public override string ToString()
         {
-            return $"{PalkkaTieto} {Nimi}";
+            return $"{PalkkaTieto} {Nimi} {Ennakonpidätys} {Palkanmaksupäivä}";
         }
     }
 }
