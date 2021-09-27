@@ -14,8 +14,11 @@ namespace SovellusEsim1
     class Sovellus
     {
         //listat (huom! p.o. public tallentamista varten)
-        List<Palkkatieto> Palkkatieto = new List<Palkkatieto>();
-        List<Työntekijä> Työntekijät = new List<Työntekijä>();
+        
+        public List<Palkkatieto> Palkkatieto = new List<Palkkatieto>();
+        public List<Työntekijä> Työntekijät = new List<Työntekijä>();
+        
+        
 
         /// <summary>
         /// Lisää henkilö
@@ -24,6 +27,10 @@ namespace SovellusEsim1
         public void LisääTyöntekijä(Työntekijä työntekijä)
         {
             Työntekijät.Add(työntekijä);
+        }
+        public void PoistaTyöntekijä(Työntekijä työntekijä)
+        {
+            Työntekijät.Remove(työntekijä);
         }
 
         public string ListaaTyöntekijät()
@@ -35,5 +42,15 @@ namespace SovellusEsim1
             }
             return retval;
         }
+        public string ListaaPalkkapäivät()
+        {
+            string retval = "";
+            foreach (var item in Työntekijät)
+            {
+                retval += $"{item.Nimi} {item.Palkanmaksupäivä}\n";
+            }
+            return retval;
+        }
+
     }
 }

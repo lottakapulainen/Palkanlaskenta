@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SovellusEsim1
 {
     class Program
     {
-        static string ohje = "0.Lopetus\n1.Lisää\n2.Listaa";
+        static string ohje = "0.Lopetus\n1.Lisää\n2.Listaa\n3.Palkanmaksupäivät\n4.Poista työntekijä";
 
         static void Main(string[] args)
         {
@@ -41,6 +42,17 @@ namespace SovellusEsim1
                         break;
 
                     default:        // kaikissa muissa tapauksissa
+                        break;
+
+                    case "3":
+                        Console.WriteLine(app.ListaaPalkkapäivät());
+                        break;
+
+                    case "4":
+                        Console.WriteLine("Valitse poistettava työntekijä");
+                        Console.WriteLine(app.ListaaTyöntekijät());
+                        var poistettava = Console.ReadLine();
+                        
                         break;
                 }
                 Console.WriteLine(ohje);
